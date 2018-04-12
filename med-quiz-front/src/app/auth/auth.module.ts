@@ -4,17 +4,20 @@ import { RegistrationComponent } from './registration/registration.component';
 import {AuthComponent} from "./auth.component";
 import {CommonModule} from "@angular/common";
 import {AuthRoutingModule} from "./auth-routing.module";
+import {ServiceModule} from "../services/service.module";
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegistrationComponent,
-    AuthComponent
+    AuthComponent,
+
   ],
   imports:[
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    ServiceModule
   ]
 
 })
