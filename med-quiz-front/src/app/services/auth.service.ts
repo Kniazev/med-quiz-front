@@ -1,4 +1,4 @@
-export class AuthSevices{
+export class AuthService{
   private isAuthenticated = false;
 
   login(){

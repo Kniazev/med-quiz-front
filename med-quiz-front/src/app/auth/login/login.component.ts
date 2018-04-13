@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators,} from "@angular/forms";
 import {UsersService} from "../../services/users.service";
 import {UserModel} from "../../model/user.model";
+import {AuthService} from "../../services/auth.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -13,7 +15,9 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService,
+              private authSevice: AuthService,
+              private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup(
@@ -29,10 +33,16 @@ export class LoginComponent implements OnInit {
 
    this.usersService.getUserByEmail(data.email)
      .subscribe((user: UserModel) =>{
-       if(user && user.password === data.password){
-
-       } else {
-         alert('This user is not exist or password is wrong.');
+       console.log()
+       if(user) {
+         if (user.password === data.password) {
+           window.localStorage.setItem('user', JSON.stringify(user));
+           this.authSevice.login();
+         } else {
+           alert('Password is wrong.');
+         }
+       }else{
+         alert('This user is not exist.');
        }
      })
   }

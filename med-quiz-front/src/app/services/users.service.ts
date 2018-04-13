@@ -12,6 +12,7 @@ export class UsersService{
 
   getUserByEmail(email:string): Observable<UserModel>{
     return this.http.get(`http://localhost:3500/users?-${email}`)
-      .map((response: Response) => response.json());
+      .map((response: Response) => response.json())
+      .map((user: UserModel[]) => user[0] ? user[0] : undefined);;
   }
 }
