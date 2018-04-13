@@ -4,7 +4,9 @@
       "id": 1,
       "email": "wfm@mail.ru",
       "password": "12345678",
-      "role": "Administrator"
+      "role": "Administrator",
+      "firstName": "Lee",
+      "lastName": "Huy"
     }
   ]
 }

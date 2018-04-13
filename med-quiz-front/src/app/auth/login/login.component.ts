@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators,} from "@angular/forms";
+import {UsersService} from "../../services/users.service";
+import {UserModel} from "../../model/user.model";
 
 
 @Component({
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit() {
     this.form = new FormGroup(
@@ -23,7 +25,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.form);
+   const data = this.form.value;
+
+   this.usersService.getUserByEmail(data.email)
+     .subscribe((user: UserModel) =>{
+       if(user && user.password === data.password){
+
+       } else {
+         alert('This user is not exist or password is wrong.');
+       }
+     })
   }
 
 }
