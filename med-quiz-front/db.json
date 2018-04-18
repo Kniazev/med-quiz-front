@@ -35,6 +35,22 @@
       "role": "user",
       "firstName": "gfvd",
       "lastName": "gdbfv"
+    },
+    {
+      "id": "wGrGJyT",
+      "email": "1234@mail.ru",
+      "password": "111",
+      "role": "user",
+      "firstName": "myName",
+      "lastName": "last"
+    },
+    {
+      "id": "j69KKuy",
+      "email": "1234@mail.ru",
+      "password": "12345678",
+      "role": "user",
+      "firstName": "hfgbdfv",
+      "lastName": "hjghfg"
     }
   ]
 }
