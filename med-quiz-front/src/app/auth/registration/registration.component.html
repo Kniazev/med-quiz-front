@@ -1,44 +1,45 @@
-<div class="container md-size">
+<div class="container md-size" xmlns="http://www.w3.org/1999/html">
   <div class="card card-register mx-auto mt-5">
     <div class="card-header">Register an Account</div>
     <div class="card-body">
-      <form>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <div class="form-row">
             <div class="col-md-6">
               <label for="exampleInputName">First name</label>
               <input class="form-control" id="exampleInputName" aria-describedby="nameHelp"
-                     placeholder="Enter first name" type="text">
+                     placeholder="Enter first name" type="text" formControlName="firstName">
             </div>
             <div class="col-md-6">
               <label for="exampleInputLastName">Last name</label>
               <input class="form-control" id="exampleInputLastName" aria-describedby="nameHelp"
-                     placeholder="Enter last name" type="text">
+                     placeholder="Enter last name" type="text" formControlName="lastName">
             </div>
           </div>
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
-                 type="email">
+                 type="email" formControlName="email">
         </div>
         <div class="form-group">
           <div class="form-row">
             <div class="col-md-6">
               <label for="exampleInputPassword1">Password</label>
-              <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+              <input class="form-control" id="exampleInputPassword1"
+                     placeholder="Password" type="password" formControlName="password">
             </div>
             <div class="col-md-6">
               <label for="exampleConfirmPassword">Confirm password</label>
-              <input class="form-control" id="exampleConfirmPassword" placeholder="Confirm password" type="password">
+              <input class="form-control" id="exampleConfirmPassword"
+                     placeholder="Confirm password" type="password"
+                     formControlName="confirmPassword"
+              >
             </div>
           </div>
         </div>
-        <a class="btn btn-primary btn-block" href="/">Register</a>
+        <button class="btn btn-primary btn-block" href="#" type="submit"> Register</button>
       </form>
-      <div class="text-center">
-        <a class="d-block small mt-3" href="/">Login Page</a>
-      </div>
     </div>
   </div>
 </div>

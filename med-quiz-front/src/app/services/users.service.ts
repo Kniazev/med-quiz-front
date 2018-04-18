@@ -15,4 +15,9 @@ export class UsersService{
       .map((response: Response) => response.json())
       .map((user: UserModel[]) => user[0] ? user[0] : undefined);;
   }
+
+  createUser(user:UserModel): Observable<UserModel>{
+    return this.http.post("http://localhost:3500/users", user)
+      .map((response: Response) => response.json());
+  }
 }

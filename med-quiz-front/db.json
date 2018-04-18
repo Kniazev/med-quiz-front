@@ -7,6 +7,34 @@
       "role": "Administrator",
       "firstName": "Lee",
       "lastName": "Huy"
+    },
+    {
+      "id": "nvbcvx",
+      "email": "vbcv",
+      "password": "bd",
+      "role": "bnvb"
+    },
+    {
+      "id": "3",
+      "email": "4",
+      "password": "1",
+      "role": "2"
+    },
+    {
+      "id": "SHmgctS",
+      "email": "3333",
+      "password": "4444",
+      "role": null,
+      "firstName": "1111",
+      "lastName": "2222"
+    },
+    {
+      "id": "O2AUIOr",
+      "email": "gbdf",
+      "password": "ffff",
+      "role": "user",
+      "firstName": "gfvd",
+      "lastName": "gdbfv"
     }
   ]
 }
