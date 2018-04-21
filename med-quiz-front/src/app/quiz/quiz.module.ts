@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 
 import {ServiceModule} from "../services/service.module";
 import {QuizRoutingModules} from "./quiz-routing.modules";
+import {QuizComponent} from "./quiz.component";
 
 
 @NgModule({
@@ -10,6 +11,9 @@ import {QuizRoutingModules} from "./quiz-routing.modules";
     CommonModule,
     ServiceModule,
     QuizRoutingModules
+  ],
+  declarations:[
+    QuizComponent
   ]
 })
 export class QuizModule{

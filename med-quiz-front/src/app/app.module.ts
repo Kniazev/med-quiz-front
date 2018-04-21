@@ -8,6 +8,7 @@ import {AuthModule} from "./auth/auth.module";
 import {UsersService} from "./services/users.service";
 import {HttpModule} from "@angular/http";
 import {AuthService} from "./services/auth.service";
+import {QuizModule} from "./quiz/quiz.module";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {AuthService} from "./services/auth.service";
     AuthModule,
     AppRoutingModule,
     HttpModule,
+    QuizModule
   ],
   providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
