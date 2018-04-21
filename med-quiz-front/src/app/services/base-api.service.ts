@@ -3,7 +3,7 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 
 @Injectable()
-export class BaseApiServices {
+export class BaseApiService {
   private baseUrl: string = 'http://localhost:3500/';
 
   constructor(protected http: Http) {

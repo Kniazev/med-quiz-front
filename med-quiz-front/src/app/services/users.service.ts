@@ -2,11 +2,11 @@ import {Http, Response} from "@angular/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {UserModel} from "../model/user.model";
-import {BaseApiServices} from "./base-api.services";
+import {BaseApiService} from "./base-api.service";
 
 
 @Injectable()
-export class UsersService extends BaseApiServices{
+export class UsersService extends BaseApiService{
   constructor(protected http: Http){
       super(http)
   }
