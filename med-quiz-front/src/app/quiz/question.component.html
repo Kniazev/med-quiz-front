@@ -1,0 +1,10 @@
+<div class="container">
+  <p>{{question.body}}</p>
+  <div class="ml-3" *ngFor="let answer of question.answers">
+    <label [attr.for]="answer.id">
+      <input id="{{answer.id}}" type="checkbox"
+             (change)="onSelected(answer, $event)">
+      {{answer.body}}
+    </label>
+  </div>
+</div>

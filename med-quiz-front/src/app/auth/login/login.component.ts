@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
     this.usersService.getUserByEmail(data.email)
       .subscribe((user: UserModel) => {
-        console.log()
+        console.log(user);
         if (user) {
           if (user.password === data.password) {
             window.localStorage.setItem('user', JSON.stringify(user));

@@ -1,7 +1,6 @@
 export class AnswerModel {
-  constructor(id: number,
-              category:string,
-              body: string,
-              isRigth: boolean) {
+  constructor(public id: number,
+              public body: string,
+              public isRight: boolean) {
   }
 }
