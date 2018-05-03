@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {QuizService} from "./services/quiz.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private quizService: QuizService){
+
+  }
+
+  get categories(){
+    return this.quizService.getCategories();
+  }
 }

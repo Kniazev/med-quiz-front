@@ -3,6 +3,7 @@ import {QuizService} from "../services/quiz.service";
 import {QuestionModel} from "../model/question.model";
 import {Observable} from "rxjs/Observable";
 import {BaseApiService} from "../services/base-api.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {BaseApiService} from "../services/base-api.service";
 })
 export class QuizComponent implements OnInit {
 
-  key: string = 'ОКС';
+  key: string = '';
   count: number = 0;
   // models: QuestionModel[];
   // categories: string[];
@@ -19,33 +20,30 @@ export class QuizComponent implements OnInit {
   public all: QuestionModel[];
   categoryList: string[];
 
-  constructor(private quizService: QuizService, private baseApi: BaseApiService,) {
-    this.baseApi.get("questions")
-      .subscribe(data=>{
-        this.all = data.questions
-      });
-    console.log(this.all);
+  constructor(private quizService: QuizService, private activatedRoute: ActivatedRoute) {
+    activatedRoute.params
+      .subscribe(p=>{
+        this.key = p['category']
+      })
   }
 
   ngOnInit(): void {
 
   }
 
-  get models(): QuestionModel[]{
+  get models(): QuestionModel[] {
     return this.quizService.getAll()
   }
 
-  get categories(): string[]{
+  get categories(): string[] {
     return this.quizService.getCategories();
   }
 
-  get questions(){
+  get questions() {
     return this.quizService.getQuestionsByCategory(this.key);
   }
 
-  onNextClick(){
-   this.count++;
+  onNextClick() {
 
-   console.log(this.count);
   }
 }

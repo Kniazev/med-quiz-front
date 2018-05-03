@@ -23,8 +23,7 @@ export class QuizService extends BaseApiService {
 
   getQuestionsByCategory(category: string): QuestionModel[] {
     return this.questions
-      .filter(p => category == null || category == p.category
-      );
+      .filter(p => category == p.category);
   }
 
   getAll(): QuestionModel[] {

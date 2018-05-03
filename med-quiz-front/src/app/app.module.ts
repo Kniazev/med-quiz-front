@@ -9,6 +9,7 @@ import {UsersService} from "./services/users.service";
 import {HttpModule} from "@angular/http";
 import {AuthService} from "./services/auth.service";
 import {QuizModule} from "./quiz/quiz.module";
+import {BsDropdownModule} from "ngx-bootstrap";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {QuizModule} from "./quiz/quiz.module";
     AuthModule,
     AppRoutingModule,
     HttpModule,
-    QuizModule
+    QuizModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
